@@ -52,24 +52,24 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Game\Core\Base\IInitializeSystem.cs" />
+     <Compile Include="Assets\Scripts\Game\Installers\SampleScene\SystemsInstaller.cs" />
+     <Compile Include="Assets\Scripts\Game\Gameplay\Views\SampleScene\SunView.cs" />
+     <Compile Include="Assets\Scripts\Game\Gameplay\Models\SampleScene\DayTime.cs" />
+     <Compile Include="Assets\Scripts\Game\Gameplay\Systems\SampleScene\DayTimeSystem.cs" />
+     <Compile Include="Assets\Scripts\Game\Core\RxField.cs" />
+     <Compile Include="Assets\Scripts\Game\Gameplay\Views\SampleScene\TimeUiView.cs" />
+     <Compile Include="Assets\Scripts\Game\Installers\SampleScene\MonoBehaviorInstaller.cs" />
+     <Compile Include="Assets\Scripts\Game\Installers\SampleScene\ControllersInstaller.cs" />
+     <Compile Include="Assets\Scripts\Game\Installers\BootstrapInstaller.cs" />
+     <Compile Include="Assets\Scripts\Game\Gameplay\Views\SampleScene\ChangeTimeUiView.cs" />
      <Compile Include="Assets\Scripts\Game\Core\GameStartup.cs" />
      <Compile Include="Assets\Scripts\Game\Core\Base\IUpdateSystem.cs" />
      <Compile Include="Assets\Scripts\Game\Core\Base\IFixedSystems.cs" />
-     <Compile Include="Assets\Scripts\Game\Core\Base\IInitializeSystem.cs" />
-     <Compile Include="Assets\Scripts\Game\Installers\BootstrapInstaller.cs" />
-     <Compile Include="Assets\Scripts\Game\Extensions\ZenjectExtensions.cs" />
-     <Compile Include="Assets\Scripts\Game\Installers\SampleScene\SystemsInstaller.cs" />
-     <Compile Include="Assets\Scripts\Game\Gameplay\Models\SampleScene\DayTime.cs" />
-     <Compile Include="Assets\Scripts\Game\Gameplay\Views\SampleScene\TimeUiView.cs" />
-     <Compile Include="Assets\Scripts\Game\Core\RxField.cs" />
-     <Compile Include="Assets\Scripts\Game\Gameplay\Controllers\SampleScene\DayTimeController.cs" />
-     <Compile Include="Assets\Scripts\Game\Gameplay\Systems\SampleScene\DayTimeSystem.cs" />
-     <Compile Include="Assets\Scripts\Game\Installers\SampleScene\DataInstaller.cs" />
      <Compile Include="Assets\Scripts\Game\Core\Base\ControllerBase.cs" />
-     <Compile Include="Assets\Scripts\Game\Installers\SampleScene\ControllersInstaller.cs" />
-     <Compile Include="Assets\Scripts\Game\Installers\SampleScene\MonoBehaviorInstaller.cs" />
-     <Compile Include="Assets\Scripts\Game\Gameplay\Views\SampleScene\SunView.cs" />
-     <Compile Include="Assets\Scripts\Game\Gameplay\Views\SampleScene\ChangeTimeUiView.cs" />
+     <Compile Include="Assets\Scripts\Game\Extensions\ZenjectExtensions.cs" />
+     <Compile Include="Assets\Scripts\Game\Installers\SampleScene\DataInstaller.cs" />
+     <Compile Include="Assets\Scripts\Game\Gameplay\Controllers\SampleScene\DayTimeController.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -292,23 +292,23 @@
  <Reference Include="UnityEditor.UnityConnectModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
  </Reference>
- <Reference Include="Newtonsoft.Json">
- <HintPath>C:/Dimas/UnityProjects/Basement/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
- </Reference>
- <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
- <HintPath>C:/Dimas/UnityProjects/Basement/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
+ <Reference Include="Zenject-usage">
+ <HintPath>C:/Dimas/UnityProjects/Basement/Assets/Plugins/Zenject/Source/Usage/Zenject-usage.dll</HintPath>
  </Reference>
  <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
  <HintPath>C:/Dimas/UnityProjects/Basement/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
  </Reference>
- <Reference Include="Zenject-usage">
- <HintPath>C:/Dimas/UnityProjects/Basement/Assets/Plugins/Zenject/Source/Usage/Zenject-usage.dll</HintPath>
- </Reference>
- <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
- <HintPath>C:/Dimas/UnityProjects/Basement/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
+ <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
+ <HintPath>C:/Dimas/UnityProjects/Basement/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
  </Reference>
  <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
  <HintPath>C:/Dimas/UnityProjects/Basement/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>C:/Dimas/UnityProjects/Basement/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
+ <HintPath>C:/Dimas/UnityProjects/Basement/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -687,14 +687,6 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Zenject-Editor.csproj">
-      <Project>{617feb94-8fb8-a2cf-f296-ecbe66adb30b}</Project>
-      <Name>Zenject-Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Zenject-PoolMonitor-Editor.csproj">
-      <Project>{f1630eed-e900-5a10-8d30-cbdbabb4f059}</Project>
-      <Name>Zenject-PoolMonitor-Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Zenject-ReflectionBaking-Editor.csproj">
       <Project>{58658f0e-6eb7-d6d1-d1ea-1744635e75fb}</Project>
       <Name>Zenject-ReflectionBaking-Editor</Name>
@@ -702,6 +694,14 @@
     <ProjectReference Include="Zenject.csproj">
       <Project>{2e639bd4-5175-9855-8ae5-2ec0a0ae61a1}</Project>
       <Name>Zenject</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject-Editor.csproj">
+      <Project>{617feb94-8fb8-a2cf-f296-ecbe66adb30b}</Project>
+      <Name>Zenject-Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject-PoolMonitor-Editor.csproj">
+      <Project>{f1630eed-e900-5a10-8d30-cbdbabb4f059}</Project>
+      <Name>Zenject-PoolMonitor-Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
