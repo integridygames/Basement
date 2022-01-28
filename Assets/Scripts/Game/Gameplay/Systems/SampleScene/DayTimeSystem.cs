@@ -1,5 +1,6 @@
 ﻿using Game.Core.Base;
 using Game.Gameplay.Models.SampleScene;
+using Game.Gameplay.Views.SampleScene;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -14,9 +15,14 @@ namespace Game.Gameplay.Systems.SampleScene
 
         private readonly DayTime _dayTime;
 
-        public DayTimeSystem(DayTime dayTime)
+        private readonly TimeUiView _timeUiView;
+        private readonly SunView _sunView;
+
+        public DayTimeSystem(DayTime dayTime, TimeUiView timeUiView, SunView sunView)
         {
             _dayTime = dayTime;
+            _timeUiView = timeUiView;
+            _sunView = sunView;
         }
         
         public void Update()
@@ -24,9 +30,10 @@ namespace Game.Gameplay.Systems.SampleScene
             _dayTime.CurrentTime += Time.deltaTime;
 
             var currentDayTime = _dayTime.CurrentTime % DayTime;
-            _dayTime.Time.Value = currentDayTime;
+            _timeUiView.SetTime(currentDayTime);
 
-            _dayTime.SunAngle.Value = DegreesInCircle * (currentDayTime / DayTime) - MidnightSunAngle;
+            var sunAngle = DegreesInCircle * (currentDayTime / DayTime) - MidnightSunAngle;
+            _sunView.SetAngle(sunAngle);
         }
     }
 }

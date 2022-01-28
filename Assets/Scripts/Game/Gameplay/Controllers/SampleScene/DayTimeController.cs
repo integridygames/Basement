@@ -8,48 +8,30 @@ using Zenject;
 namespace Game.Gameplay.Controllers.SampleScene
 {
     [UsedImplicitly] // Нужен чтобы ide не жаловалась, что класс не используется явно
-    public class DayTimeController : ControllerBase<DayTime>, IInitializable, IDisposable
+    public class DayTimeController : ControllerBase<ChangeTimeUiView>, IInitializable, IDisposable
     {
         private const float HalfDayTime = 12f;
         
-        private readonly TimeUiView _timeUiView;
-        private readonly SunView _sunView;
-        private readonly ChangeTimeUiView _changeTimeUiView;
+        private readonly DayTime _dayTime;
 
-        public DayTimeController(DayTime data, TimeUiView timeUiView, SunView sunView, ChangeTimeUiView changeTimeUiView) : base(data)
+        public DayTimeController(ChangeTimeUiView changeTimeUiView, DayTime dayTime) : base(changeTimeUiView)
         {
-            _timeUiView = timeUiView;
-            _sunView = sunView;
-            _changeTimeUiView = changeTimeUiView;
+            _dayTime = dayTime;
         }
 
         public void Initialize()
         {
-            Data.Time.OnUpdate += OnTimeUpdateHandler;
-            Data.SunAngle.OnUpdate += OnAngleUpdateHandler;
-            _changeTimeUiView.OnChangeTime += OnChangeTimeHandler;
+            View.OnChangeTime += OnChangeTimeHandler;
         }
 
         public void Dispose()
         {
-            Data.Time.OnUpdate -= OnTimeUpdateHandler;
-            Data.SunAngle.OnUpdate -= OnAngleUpdateHandler;
-            _changeTimeUiView.OnChangeTime -= OnChangeTimeHandler;
+            View.OnChangeTime -= OnChangeTimeHandler;
         }
-
-        private void OnTimeUpdateHandler(float time)
-        {
-            _timeUiView.SetTime(time);
-        }
-
-        private void OnAngleUpdateHandler(float angle)
-        {
-            _sunView.SetAngle(angle);
-        }
-
+        
         private void OnChangeTimeHandler()
         {
-            Data.CurrentTime += HalfDayTime;
+            _dayTime.CurrentTime += HalfDayTime;
         }
     }
 }

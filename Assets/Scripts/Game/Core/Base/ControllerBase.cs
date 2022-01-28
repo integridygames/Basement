@@ -1,12 +1,14 @@
-﻿namespace Game.Core.Base
-{
-    public abstract class ControllerBase<T>
-    {
-        protected readonly T Data;
+﻿using UnityEngine;
 
-        protected ControllerBase(T data)
+namespace Game.Core.Base
+{
+    public abstract class ControllerBase<T> where T : MonoBehaviour
+    {
+        protected readonly T View;
+
+        protected ControllerBase(T view)
         {
-            Data = data;
+            View = view;
         }
     }
 }
